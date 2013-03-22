@@ -13,7 +13,7 @@ function os2web_hearings_feeds_importer_default() {
   $feeds_importer = new stdClass();
   $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
   $feeds_importer->api_version = 1;
-  $feeds_importer->id = 'hearing';
+  $feeds_importer->id = 'os2web_hearings_hearing_import';
   $feeds_importer->config = array(
     'name' => 'Planer i høring',
     'description' => 'Importerer planer i høring fra GIS',
@@ -60,7 +60,7 @@ function os2web_hearings_feeds_importer_default() {
     'processor' => array(
       'plugin_key' => 'FeedsNodeProcessor',
       'config' => array(
-        'content_type' => 'hearing',
+        'content_type' => 'os2web_hearings_hearing',
         'expire' => '-1',
         'author' => 0,
         'mappings' => array(
@@ -76,17 +76,17 @@ function os2web_hearings_feeds_importer_default() {
           ),
           2 => array(
             'source' => 'xpathparser:2',
-            'target' => 'field_url',
+            'target' => 'field_os2web_hearings_url',
             'unique' => FALSE,
           ),
           3 => array(
             'source' => 'xpathparser:3',
-            'target' => 'field_slutdato:start',
+            'target' => 'field_os2web_hearings_enddate:start',
             'unique' => FALSE,
           ),
           4 => array(
             'source' => 'xpathparser:4',
-            'target' => 'field_startdato:start',
+            'target' => 'field_os2web_hearings_startdate:start',
             'unique' => FALSE,
           ),
         ),
@@ -101,7 +101,7 @@ function os2web_hearings_feeds_importer_default() {
     'import_on_create' => 1,
     'process_in_background' => 0,
   );
-  $export['hearing'] = $feeds_importer;
+  $export['os2web_hearings_hearing_import'] = $feeds_importer;
 
   return $export;
 }

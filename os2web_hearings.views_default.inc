@@ -11,7 +11,7 @@ function os2web_hearings_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'planer_i_hearing';
+  $view->name = 'os2web_hearings_view_hearing';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
@@ -23,7 +23,7 @@ function os2web_hearings_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Planer i høring';
-  $handler->display->display_options['css_class'] = 'planer_i_hearing';
+  $handler->display->display_options['css_class'] = 'os2web_hearings_view_hearing';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'mere';
   $handler->display->display_options['access']['type'] = 'perm';
@@ -67,13 +67,13 @@ function os2web_hearings_views_default_views() {
   $handler->display->display_options['footer']['area']['content'] = '<span class="foroffase"><a href="/foroffentlighed">> I foroffentlighedsfase</a></span><span class="vedtagne"><a href="/lokalplaner">> Vedtagne</a></span><span class="alle"><a href="/planforslag">> Se alle</a></span>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   /* Felt: Indhold: Slutdato */
-  $handler->display->display_options['fields']['field_slutdato']['id'] = 'field_slutdato';
-  $handler->display->display_options['fields']['field_slutdato']['table'] = 'field_data_field_slutdato';
-  $handler->display->display_options['fields']['field_slutdato']['field'] = 'field_slutdato';
-  $handler->display->display_options['fields']['field_slutdato']['label'] = '';
-  $handler->display->display_options['fields']['field_slutdato']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_slutdato']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_slutdato']['settings'] = array(
+  $handler->display->display_options['fields']['field_os2web_hearings_enddate']['id'] = 'field_os2web_hearings_enddate';
+  $handler->display->display_options['fields']['field_os2web_hearings_enddate']['table'] = 'field_data_field_os2web_hearings_enddate';
+  $handler->display->display_options['fields']['field_os2web_hearings_enddate']['field'] = 'field_os2web_hearings_enddate';
+  $handler->display->display_options['fields']['field_os2web_hearings_enddate']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_hearings_enddate']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_hearings_enddate']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_hearings_enddate']['settings'] = array(
     'format_type' => 'kun_dato',
     'fromto' => 'both',
     'multiple_number' => '',
@@ -81,20 +81,20 @@ function os2web_hearings_views_default_views() {
     'multiple_to' => '',
   );
   /* Felt: Indhold: Hjemmeside */
-  $handler->display->display_options['fields']['field_url']['id'] = 'field_url';
-  $handler->display->display_options['fields']['field_url']['table'] = 'field_data_field_url';
-  $handler->display->display_options['fields']['field_url']['field'] = 'field_url';
-  $handler->display->display_options['fields']['field_url']['label'] = '';
-  $handler->display->display_options['fields']['field_url']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_url']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_url']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['field_os2web_hearings_url']['id'] = 'field_os2web_hearings_url';
+  $handler->display->display_options['fields']['field_os2web_hearings_url']['table'] = 'field_data_field_os2web_hearings_url';
+  $handler->display->display_options['fields']['field_os2web_hearings_url']['field'] = 'field_os2web_hearings_url';
+  $handler->display->display_options['fields']['field_os2web_hearings_url']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_hearings_url']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_hearings_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_hearings_url']['type'] = 'text_plain';
   /* Felt: Indhold: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['path'] = '[field_url]';
-  $handler->display->display_options['fields']['title']['alter']['alt'] = '[title] - [field_slutdato] ';
+  $handler->display->display_options['fields']['title']['alter']['path'] = '[field_os2web_hearings_url]';
+  $handler->display->display_options['fields']['title']['alter']['alt'] = '[title] - [field_os2web_hearings_enddate] ';
   $handler->display->display_options['fields']['title']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
@@ -121,11 +121,11 @@ function os2web_hearings_views_default_views() {
   $handler->display->display_options['fields']['imported']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['imported']['date_format'] = 'kun_dato';
   /* Felt: Indhold: Startdato */
-  $handler->display->display_options['fields']['field_startdato']['id'] = 'field_startdato';
-  $handler->display->display_options['fields']['field_startdato']['table'] = 'field_data_field_startdato';
-  $handler->display->display_options['fields']['field_startdato']['field'] = 'field_startdato';
-  $handler->display->display_options['fields']['field_startdato']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_startdato']['settings'] = array(
+  $handler->display->display_options['fields']['field_os2web_hearings_startdate']['id'] = 'field_os2web_hearings_startdate';
+  $handler->display->display_options['fields']['field_os2web_hearings_startdate']['table'] = 'field_data_field_os2web_hearings_startdate';
+  $handler->display->display_options['fields']['field_os2web_hearings_startdate']['field'] = 'field_os2web_hearings_startdate';
+  $handler->display->display_options['fields']['field_os2web_hearings_startdate']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2web_hearings_startdate']['settings'] = array(
     'format_type' => 'kun_dato',
     'fromto' => 'both',
     'multiple_number' => '',
@@ -137,8 +137,8 @@ function os2web_hearings_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = 'Dato fra-til';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_startdato] -<br />
-[field_slutdato]';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_os2web_hearings_startdate] -<br />
+[field_os2web_hearings_enddate]';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'span';
   $handler->display->display_options['fields']['nothing']['element_class'] = 'aktiv-hearing';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -159,8 +159,8 @@ function os2web_hearings_views_default_views() {
   $handler->display->display_options['fields']['contextual_links']['label'] = '';
   $handler->display->display_options['fields']['contextual_links']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['contextual_links']['fields'] = array(
-    'field_slutdato' => 'field_slutdato',
-    'field_url' => 'field_url',
+    'field_os2web_hearings_enddate' => 'field_os2web_hearings_enddate',
+    'field_os2web_hearings_url' => 'field_os2web_hearings_url',
     'created' => 'created',
     'imported' => 'imported',
     'title' => 0,
@@ -184,7 +184,7 @@ function os2web_hearings_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'hearing' => 'hearing',
+    'os2web_hearings_hearing' => 'os2web_hearings_hearing',
   );
 
   /* Display: Page */
@@ -213,22 +213,22 @@ function os2web_hearings_views_default_views() {
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
-    'field_slutdato' => 'field_slutdato',
-    'field_url' => 'field_url',
+    'field_os2web_hearings_enddate' => 'field_os2web_hearings_enddate',
+    'field_os2web_hearings_url' => 'field_os2web_hearings_url',
     'title' => 'title',
     'imported' => 'imported',
     'nothing' => 'nothing',
   );
-  $handler->display->display_options['style_options']['default'] = 'field_slutdato';
+  $handler->display->display_options['style_options']['default'] = 'field_os2web_hearings_enddate';
   $handler->display->display_options['style_options']['info'] = array(
-    'field_slutdato' => array(
+    'field_os2web_hearings_enddate' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_url' => array(
+    'field_os2web_hearings_url' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -259,7 +259,7 @@ function os2web_hearings_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $translatables['planer_i_hearing'] = array(
+  $translatables['os2web_hearings_view_hearing'] = array(
     t('Master'),
     t('Planer i høring'),
     t('mere'),
@@ -280,19 +280,19 @@ function os2web_hearings_views_default_views() {
     t('Sidefod'),
     t('<span class="foroffase"><a href="/foroffentlighed">> I foroffentlighedsfase</a></span><span class="vedtagne"><a href="/lokalplaner">> Vedtagne</a></span><span class="alle"><a href="/planforslag">> Se alle</a></span>'),
     t('Titel'),
-    t('[title] - [field_slutdato] '),
+    t('[title] - [field_os2web_hearings_enddate] '),
     t('_blank'),
     t('[created]'),
     t('Startdato'),
     t('Dato fra-til'),
-    t('[field_startdato] -<br />
-[field_slutdato]'),
+    t('[field_os2web_hearings_startdate] -<br />
+[field_os2web_hearings_enddate]'),
     t('I høring'),
     t('Page'),
     t('Feed'),
     t('Block'),
   );
-  $export['planer_i_hearing'] = $view;
+  $export['os2web_hearings_view_hearing'] = $view;
 
   return $export;
 }

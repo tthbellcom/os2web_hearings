@@ -10,8 +10,8 @@
 function os2web_hearings_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-hearing-body'.
-  $fields['node-hearing-body'] = array(
+  // Exported field: 'node-os2web_hearings_hearing-body'.
+  $fields['node-os2web_hearings_hearing-body'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -40,7 +40,7 @@ function os2web_hearings_field_default_fields() {
       'type' => 'text_with_summary',
     ),
     'field_instance' => array(
-      'bundle' => 'hearing',
+      'bundle' => 'os2web_hearings_hearing',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -89,14 +89,14 @@ function os2web_hearings_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-hearing-field_slutdato'.
-  $fields['node-hearing-field_slutdato'] = array(
+  // Exported field: 'node-os2web_hearings_hearing-field_os2web_hearings_enddate'.
+  $fields['node-os2web_hearings_hearing-field_os2web_hearings_enddate'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_slutdato',
+      'field_name' => 'field_os2web_hearings_enddate',
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
@@ -120,7 +120,7 @@ function os2web_hearings_field_default_fields() {
       'type' => 'datetime',
     ),
     'field_instance' => array(
-      'bundle' => 'hearing',
+      'bundle' => 'os2web_hearings_hearing',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -152,7 +152,7 @@ function os2web_hearings_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_slutdato',
+      'field_name' => 'field_os2web_hearings_enddate',
       'label' => 'Slutdato',
       'required' => 0,
       'settings' => array(
@@ -179,14 +179,14 @@ function os2web_hearings_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-hearing-field_startdato'.
-  $fields['node-hearing-field_startdato'] = array(
+  // Exported field: 'node-os2web_hearings_hearing-field_os2web_hearings_startdate'.
+  $fields['node-os2web_hearings_hearing-field_os2web_hearings_startdate'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_startdato',
+      'field_name' => 'field_os2web_hearings_startdate',
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
@@ -210,7 +210,7 @@ function os2web_hearings_field_default_fields() {
       'type' => 'datetime',
     ),
     'field_instance' => array(
-      'bundle' => 'hearing',
+      'bundle' => 'os2web_hearings_hearing',
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -241,7 +241,7 @@ function os2web_hearings_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_startdato',
+      'field_name' => 'field_os2web_hearings_startdate',
       'label' => 'Startdato',
       'required' => 0,
       'settings' => array(
@@ -268,14 +268,14 @@ function os2web_hearings_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-hearing-field_url'.
-  $fields['node-hearing-field_url'] = array(
+  // Exported field: 'node-os2web_hearings_hearing-field_os2web_hearings_url'.
+  $fields['node-os2web_hearings_hearing-field_os2web_hearings_url'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_url',
+      'field_name' => 'field_os2web_hearings_url',
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -298,7 +298,7 @@ function os2web_hearings_field_default_fields() {
       'type' => 'text',
     ),
     'field_instance' => array(
-      'bundle' => 'hearing',
+      'bundle' => 'os2web_hearings_hearing',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -324,7 +324,7 @@ function os2web_hearings_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_url',
+      'field_name' => 'field_os2web_hearings_url',
       'label' => 'URL',
       'required' => 0,
       'settings' => array(

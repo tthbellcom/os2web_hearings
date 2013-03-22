@@ -30,7 +30,7 @@ function os2web_hearings_views_api() {
  */
 function os2web_hearings_node_info() {
   $items = array(
-    'hearing' => array(
+    'os2web_hearings_hearing' => array(
       'name' => t('Planer i høring'),
       'base' => 'node_content',
       'description' => '',
