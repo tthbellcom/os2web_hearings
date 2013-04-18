@@ -1,9 +1,9 @@
 name = OS2web Planer i Høring
 description = Importerer planer i høring fra GIS
 core = 7.x
-package = OS2Web - Eksterne datakilder
+package = OS2Web - Frontend
 php = 5.2.4
-version = 7.x-1.10
+version = 7.x-1.0-beta1
 project = os2web_hearings
 dependencies[] = ctools
 dependencies[] = date
