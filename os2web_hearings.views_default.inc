@@ -94,7 +94,7 @@ function os2web_hearings_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['path'] = '[field_os2web_hearings_url]';
-  $handler->display->display_options['fields']['title']['alter']['alt'] = '[title] - [field_os2web_hearings_enddate] ';
+  $handler->display->display_options['fields']['title']['alter']['alt'] = '[title] - [field_os2web_hearings_enddate]';
   $handler->display->display_options['fields']['title']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
@@ -280,7 +280,7 @@ function os2web_hearings_views_default_views() {
     t('Sidefod'),
     t('<span class="foroffase"><a href="/foroffentlighed">> I foroffentlighedsfase</a></span><span class="vedtagne"><a href="/lokalplaner">> Vedtagne</a></span><span class="alle"><a href="/planforslag">> Se alle</a></span>'),
     t('Titel'),
-    t('[title] - [field_os2web_hearings_enddate] '),
+    t('[title] - [field_os2web_hearings_enddate]'),
     t('_blank'),
     t('[created]'),
     t('Startdato'),
