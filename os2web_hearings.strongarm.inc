@@ -37,7 +37,7 @@ function os2web_hearings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_os2web_hearings_hearing';
-  $strongarm->value = 'main-menu:0';
+  $strongarm->value = 'os2web-main-menu:0';
   $export['menu_parent_os2web_hearings_hearing'] = $strongarm;
 
   $strongarm = new stdClass();
