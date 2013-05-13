@@ -14,7 +14,7 @@ function os2web_hearings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_format_kun_dato';
-  $strongarm->value = 'd.m.y';
+  $strongarm->value = 'd';
   $export['date_format_kun_dato'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -37,7 +37,7 @@ function os2web_hearings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_os2web_hearings_hearing';
-  $strongarm->value = 'os2web-main-menu:0';
+  $strongarm->value = 'main-menu:0';
   $export['menu_parent_os2web_hearings_hearing'] = $strongarm;
 
   $strongarm = new stdClass();
