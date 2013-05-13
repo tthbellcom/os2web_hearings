@@ -80,7 +80,7 @@ function os2web_hearings_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Indhold: Hjemmeside */
+  /* Felt: Indhold: URL */
   $handler->display->display_options['fields']['field_os2web_hearings_url']['id'] = 'field_os2web_hearings_url';
   $handler->display->display_options['fields']['field_os2web_hearings_url']['table'] = 'field_data_field_os2web_hearings_url';
   $handler->display->display_options['fields']['field_os2web_hearings_url']['field'] = 'field_os2web_hearings_url';
@@ -281,7 +281,6 @@ function os2web_hearings_views_default_views() {
     t('<span class="foroffase"><a href="/foroffentlighed">> I foroffentlighedsfase</a></span><span class="vedtagne"><a href="/lokalplaner">> Vedtagne</a></span><span class="alle"><a href="/planforslag">> Se alle</a></span>'),
     t('Titel'),
     t('[title] - [field_os2web_hearings_enddate]'),
-    t('_blank'),
     t('[created]'),
     t('Startdato'),
     t('Dato fra-til'),
