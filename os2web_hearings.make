@@ -13,8 +13,8 @@ core = 7.x
 
 ; Basic
 
-projects[ctools][subdir] = "contrib"
-projects[ctools][version] = "1.3"
+# projects[ctools][subdir] = "contrib"
+# projects[ctools][version] = "1.3"
 
 projects[date][subdir] = "contrib"
 projects[date][version] = "2.6"
