@@ -13,6 +13,34 @@ function os2web_hearings_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_os2web_hearings_case_attac|node|os2web_hearings_hearing_case|form';
+  $field_group->group_name = 'group_os2web_hearings_case_attac';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'os2web_hearings_hearing_case';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_os2web_hearings_case_tabs';
+  $field_group->data = array(
+    'label' => 'Vedhæftninger',
+    'weight' => '9',
+    'children' => array(
+      0 => 'field_os2web_hearings_meeting',
+      1 => 'field_os2web_hearings_files',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_os2web_hearings_case_attac|node|os2web_hearings_hearing_case|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_os2web_hearings_case_setti|node|os2web_hearings_hearing_case|form';
   $field_group->group_name = 'group_os2web_hearings_case_setti';
   $field_group->entity_type = 'node';
@@ -56,6 +84,7 @@ function os2web_hearings_field_group_info() {
       0 => 'group_os2web_hearings_case_text',
       1 => 'group_os2web_hearings_case_taxon',
       2 => 'group_os2web_hearings_case_setti',
+      3 => 'group_os2web_hearings_case_attac',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
@@ -112,7 +141,9 @@ function os2web_hearings_field_group_info() {
     'weight' => '6',
     'children' => array(
       0 => 'body',
-      1 => 'title',
+      1 => 'field_os2web_base_field_lead_img',
+      2 => 'field_os2web_base_field_summary',
+      3 => 'title',
     ),
     'format_type' => 'htab',
     'format_settings' => array(

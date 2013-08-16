@@ -13,6 +13,48 @@ function os2web_hearings_init(){
   drupal_add_library('system', 'ui.datepicker');
 }
 
+/*
+* Implements hook_menu()
+*/
+function os2web_hearings_menu(){
+  $items = array();
+
+  // Admin menu
+  $items['admin/config/os2web_hearings'] = array(
+    'title' => 'OS2Web Hearings',
+    'description' => 'General settings ',
+    'position' => 'right',
+    'weight' => -10,
+    'page callback' => 'system_admin_menu_block_page',
+    'file' => 'system.admin.inc',
+    'file path' => drupal_get_path('module', 'system'),
+    'access arguments' => array('administer site configuration'),
+  );
+
+  $items['admin/config/os2web_hearings/settings'] = array(
+    'title' => 'OS2web Hearings',
+    'description' => 'Change settings for OS2web Hearings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('os2web_hearings_settings_form'),
+    'access arguments' => array('administer site configuration'),
+  );
+
+  return $items;
+}
+
+/*
+* Settings form callback
+*/
+function os2web_hearings_settings_form(){
+  $form['os2web_hearings_page_info_nid'] = array(
+    '#title' => t('Node id for info text on hearings page'),
+    '#default_value' => variable_get('os2web_hearings_page_info_nid'),
+    '#type' => 'textfield',
+  );
+
+  return system_settings_form($form);
+}
+
 /**
  * Implements hook_form_alter()
  */
