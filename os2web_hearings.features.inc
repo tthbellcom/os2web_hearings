@@ -43,7 +43,7 @@ function os2web_hearings_node_info() {
       'help' => '',
     ),
     'os2web_hearings_hearing_case' => array(
-      'name' => t('Hearing'),
+      'name' => t('Høring'),
       'base' => 'node_content',
       'description' => t('Oprettelse af høring.'),
       'has_title' => '1',

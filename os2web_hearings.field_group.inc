@@ -23,8 +23,8 @@ function os2web_hearings_field_group_info() {
     'label' => 'Vedhæftninger',
     'weight' => '9',
     'children' => array(
-      0 => 'field_os2web_hearings_meeting',
-      1 => 'field_os2web_hearings_files',
+      0 => 'field_os2web_hearings_files',
+      1 => 'field_os2web_hearings_meeting',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -51,9 +51,9 @@ function os2web_hearings_field_group_info() {
     'label' => 'Indstillinger',
     'weight' => '8',
     'children' => array(
-      0 => 'field_os2web_hearings_type',
-      1 => 'field_os2web_hearings_enddate',
-      2 => 'field_os2web_hearings_startdate',
+      0 => 'field_os2web_hearings_enddate',
+      1 => 'field_os2web_hearings_startdate',
+      2 => 'field_os2web_hearings_type',
       3 => 'path',
     ),
     'format_type' => 'htab',
@@ -78,17 +78,17 @@ function os2web_hearings_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Hearing',
+    'label' => 'Høring',
     'weight' => '0',
     'children' => array(
-      0 => 'group_os2web_hearings_case_text',
-      1 => 'group_os2web_hearings_case_taxon',
-      2 => 'group_os2web_hearings_case_setti',
-      3 => 'group_os2web_hearings_case_attac',
+      0 => 'group_os2web_hearings_case_attac',
+      1 => 'group_os2web_hearings_case_setti',
+      2 => 'group_os2web_hearings_case_taxon',
+      3 => 'group_os2web_hearings_case_text',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
-      'formatter' => '',
+      'label' => 'Høring',
       'instance_settings' => array(
         'classes' => '',
       ),
@@ -109,11 +109,11 @@ function os2web_hearings_field_group_info() {
     'label' => 'Emneord',
     'weight' => '7',
     'children' => array(
-      0 => 'field_os2web_base_field_kle_ref',
-      1 => 'field_os2web_base_field_loca_ref',
-      2 => 'field_os2web_base_field_organiz',
-      3 => 'field_os2web_base_field_politics',
-      4 => 'field_os2web_base_field_edi_tags',
+      0 => 'field_os2web_base_field_edi_tags',
+      1 => 'field_os2web_base_field_kle_ref',
+      2 => 'field_os2web_base_field_loca_ref',
+      3 => 'field_os2web_base_field_organiz',
+      4 => 'field_os2web_base_field_politics',
     ),
     'format_type' => 'htab',
     'format_settings' => array(

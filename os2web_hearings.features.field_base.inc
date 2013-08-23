@@ -74,7 +74,7 @@ function os2web_hearings_field_default_field_bases() {
   // Exported field_base: 'field_os2web_hearings_meeting'
   $field_bases['field_os2web_hearings_meeting'] = array(
     'active' => 1,
-    'cardinality' => 3,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_os2web_hearings_meeting',
@@ -105,7 +105,6 @@ function os2web_hearings_field_default_field_bases() {
           'type' => 'none',
         ),
         'target_bundles' => array(
-          'os2web_hearings_hearing' => 'os2web_hearings_hearing',
           'os2web_meetings_meeting' => 'os2web_meetings_meeting',
         ),
       ),
@@ -162,8 +161,8 @@ function os2web_hearings_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        'hoering' => 'Høring',
         'afgoerelse' => 'Afgørelse',
+        'hoering' => 'Høring',
       ),
       'allowed_values_function' => '',
     ),
