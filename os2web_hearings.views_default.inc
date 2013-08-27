@@ -236,7 +236,7 @@ if(is_object($node)){
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<a href="/hoeringer">Mere</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="/hoeringer">Se alle i høring</a>';
   $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Felt: Indhold: Titel */
@@ -273,7 +273,7 @@ if(is_object($node)){
     t('Status'),
     t('Høringer resume'),
     t('Resume, showing 3 latest hearings'),
-    t('<a href="/hoeringer">Mere</a>'),
+    t('<a href="/hoeringer">Se alle i høring</a>'),
   );
   $export['os2web_hearings'] = $view;
 

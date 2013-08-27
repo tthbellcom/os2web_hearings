@@ -431,7 +431,7 @@ function os2web_hearings_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => 'medium',
+          'image_style' => 'os2web_base_style_image',
         ),
         'type' => 'image',
         'weight' => 0,
