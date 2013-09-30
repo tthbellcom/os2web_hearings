@@ -7,6 +7,95 @@
 include_once 'os2web_hearings.features.inc';
 
 /**
+ * Implements hook_init().
+ */
+function os2web_hearings_init(){
+  drupal_add_library('system', 'ui.datepicker');
+}
+
+/*
+* Implements hook_menu()
+*/
+function os2web_hearings_menu(){
+  $items = array();
+
+  // Admin menu
+  $items['admin/config/os2web_hearings'] = array(
+    'title' => 'OS2Web Hearings',
+    'description' => 'General settings ',
+    'position' => 'right',
+    'weight' => -10,
+    'page callback' => 'system_admin_menu_block_page',
+    'file' => 'system.admin.inc',
+    'file path' => drupal_get_path('module', 'system'),
+    'access arguments' => array('administer site configuration'),
+  );
+
+  $items['admin/config/os2web_hearings/settings'] = array(
+    'title' => 'OS2web Hearings',
+    'description' => 'Change settings for OS2web Hearings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('os2web_hearings_settings_form'),
+    'access arguments' => array('administer site configuration'),
+  );
+
+  return $items;
+}
+
+/*
+* Settings form callback
+*/
+function os2web_hearings_settings_form(){
+  $form['os2web_hearings_page_info_nid'] = array(
+    '#title' => t('Node id for info text on hearings page'),
+    '#default_value' => variable_get('os2web_hearings_page_info_nid'),
+    '#type' => 'textfield',
+  );
+
+  return system_settings_form($form);
+}
+
+/**
+ * Implements hook_form_alter()
+ */
+function os2web_hearings_form_views_exposed_form_alter(&$form, &$form_state){
+  if($form['#id'] === 'views-exposed-form-os2web-hearings-page'){
+    $form['from_date']['value']['#date_format'] = 'd-m-Y';
+    $form['to_date']['value']['#date_format'] = 'd-m-Y';
+  }
+
+    // Add a little js to make the calendar icons clickable.
+    $cal_icon = url(drupal_get_path('theme', variable_get('theme_default', NULL)) . "/images/cal.png");
+    $datepicker = '
+      
+      
+      (function ($) {
+        Drupal.behaviors.os2web_meetings = {
+          attach: function(context, settings) {
+                      $("#edit-from-date-value-date").datepicker({
+                                    showOn: "both",
+                                    buttonImage: "' . $cal_icon . '",
+                                    buttonImageOnly: true,
+                                    dateFormat: "dd-mm-yy"
+                      });
+                      $("#edit-to-date-value-date").datepicker({
+                                    showOn: "both",
+                                    buttonImage: "' . $cal_icon . '",
+                                    buttonImageOnly: true,
+                                    dateFormat: "dd-mm-yy"
+                      });
+            }
+          }
+        }(jQuery));';
+
+    drupal_add_js($datepicker, array(
+      'type' => 'inline',
+      'scope' => 'footer',
+      'weight' => 5)
+    );
+}
+
+/**
  * Implements hook_os2web_help().
  */
 function os2web_hearings_os2web_help($sections) {

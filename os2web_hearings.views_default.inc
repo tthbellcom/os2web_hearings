@@ -11,6 +11,273 @@ function os2web_hearings_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'os2web_hearings';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Hearings';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Høringer og afgørelser';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'Se alle';
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Søg';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'field_os2web_hearings_type' => 'field_os2web_hearings_type',
+    'title' => 'title',
+    'field_os2web_hearings_enddate' => 'field_os2web_hearings_enddate',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'field_os2web_hearings_type' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_os2web_hearings_enddate' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Overskrift: Global: Tekstområde */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  /* Felt: Indhold: Type */
+  $handler->display->display_options['fields']['field_os2web_hearings_type']['id'] = 'field_os2web_hearings_type';
+  $handler->display->display_options['fields']['field_os2web_hearings_type']['table'] = 'field_data_field_os2web_hearings_type';
+  $handler->display->display_options['fields']['field_os2web_hearings_type']['field'] = 'field_os2web_hearings_type';
+  $handler->display->display_options['fields']['field_os2web_hearings_type']['label'] = 'Fase';
+  /* Felt: Indhold: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Beskrivelse';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Felt: Indhold: Slutdato */
+  $handler->display->display_options['fields']['field_os2web_hearings_enddate']['id'] = 'field_os2web_hearings_enddate';
+  $handler->display->display_options['fields']['field_os2web_hearings_enddate']['table'] = 'field_data_field_os2web_hearings_enddate';
+  $handler->display->display_options['fields']['field_os2web_hearings_enddate']['field'] = 'field_os2web_hearings_enddate';
+  $handler->display->display_options['fields']['field_os2web_hearings_enddate']['label'] = 'Frist';
+  $handler->display->display_options['fields']['field_os2web_hearings_enddate']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Sorteringskriterie: Indhold: Oprettelsesdato */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sorteringskriterie: Indhold: Startdato (field_os2web_hearings_startdate) */
+  $handler->display->display_options['sorts']['field_os2web_hearings_startdate_value']['id'] = 'field_os2web_hearings_startdate_value';
+  $handler->display->display_options['sorts']['field_os2web_hearings_startdate_value']['table'] = 'field_data_field_os2web_hearings_startdate';
+  $handler->display->display_options['sorts']['field_os2web_hearings_startdate_value']['field'] = 'field_os2web_hearings_startdate_value';
+  /* Filterkriterie: Indhold: Udgivet */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterie: Indhold: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'os2web_hearings_hearing_case' => 'os2web_hearings_hearing_case',
+  );
+
+  /* Display: Høringer */
+  $handler = $view->new_display('page', 'Høringer', 'page');
+  $handler->display->display_options['display_description'] = 'Search/overview page for hearings';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Overskrift: Global: PHP */
+  $handler->display->display_options['header']['php']['id'] = 'php';
+  $handler->display->display_options['header']['php']['table'] = 'views';
+  $handler->display->display_options['header']['php']['field'] = 'php';
+  $handler->display->display_options['header']['php']['empty'] = TRUE;
+  $handler->display->display_options['header']['php']['php_output'] = '<?php
+$node = node_load(variable_get(\'os2web_hearings_page_info_nid\'), \'\');
+if(is_object($node)){
+  $node->title = NULL;
+  print drupal_render(node_view($node));
+}
+?>';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterie: Indhold: Udgivet */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterie: Indhold: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'os2web_hearings_hearing_case' => 'os2web_hearings_hearing_case',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filterkriterie: Indhold: Slutdato (field_os2web_hearings_enddate) */
+  $handler->display->display_options['filters']['field_os2web_hearings_enddate_value_1']['id'] = 'field_os2web_hearings_enddate_value_1';
+  $handler->display->display_options['filters']['field_os2web_hearings_enddate_value_1']['table'] = 'field_data_field_os2web_hearings_enddate';
+  $handler->display->display_options['filters']['field_os2web_hearings_enddate_value_1']['field'] = 'field_os2web_hearings_enddate_value';
+  $handler->display->display_options['filters']['field_os2web_hearings_enddate_value_1']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_os2web_hearings_enddate_value_1']['group'] = 1;
+  $handler->display->display_options['filters']['field_os2web_hearings_enddate_value_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_os2web_hearings_enddate_value_1']['expose']['operator_id'] = 'field_os2web_hearings_enddate_value_1_op';
+  $handler->display->display_options['filters']['field_os2web_hearings_enddate_value_1']['expose']['label'] = 'Fra';
+  $handler->display->display_options['filters']['field_os2web_hearings_enddate_value_1']['expose']['operator'] = 'field_os2web_hearings_enddate_value_1_op';
+  $handler->display->display_options['filters']['field_os2web_hearings_enddate_value_1']['expose']['identifier'] = 'from_date';
+  $handler->display->display_options['filters']['field_os2web_hearings_enddate_value_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    4 => 0,
+    7 => 0,
+    3 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['field_os2web_hearings_enddate_value_1']['form_type'] = 'date_text';
+  /* Filterkriterie: Indhold: Slutdato (field_os2web_hearings_enddate) */
+  $handler->display->display_options['filters']['field_os2web_hearings_enddate_value']['id'] = 'field_os2web_hearings_enddate_value';
+  $handler->display->display_options['filters']['field_os2web_hearings_enddate_value']['table'] = 'field_data_field_os2web_hearings_enddate';
+  $handler->display->display_options['filters']['field_os2web_hearings_enddate_value']['field'] = 'field_os2web_hearings_enddate_value';
+  $handler->display->display_options['filters']['field_os2web_hearings_enddate_value']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_os2web_hearings_enddate_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_os2web_hearings_enddate_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_os2web_hearings_enddate_value']['expose']['operator_id'] = 'field_os2web_hearings_enddate_value_op';
+  $handler->display->display_options['filters']['field_os2web_hearings_enddate_value']['expose']['label'] = 'Til';
+  $handler->display->display_options['filters']['field_os2web_hearings_enddate_value']['expose']['operator'] = 'field_os2web_hearings_enddate_value_op';
+  $handler->display->display_options['filters']['field_os2web_hearings_enddate_value']['expose']['identifier'] = 'to_date';
+  $handler->display->display_options['filters']['field_os2web_hearings_enddate_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    4 => 0,
+    7 => 0,
+    3 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['field_os2web_hearings_enddate_value']['form_type'] = 'date_text';
+  /* Filterkriterie: Indhold: Type (field_os2web_hearings_type) */
+  $handler->display->display_options['filters']['field_os2web_hearings_type_value']['id'] = 'field_os2web_hearings_type_value';
+  $handler->display->display_options['filters']['field_os2web_hearings_type_value']['table'] = 'field_data_field_os2web_hearings_type';
+  $handler->display->display_options['filters']['field_os2web_hearings_type_value']['field'] = 'field_os2web_hearings_type_value';
+  $handler->display->display_options['filters']['field_os2web_hearings_type_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_os2web_hearings_type_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_os2web_hearings_type_value']['expose']['operator_id'] = 'field_os2web_hearings_type_value_op';
+  $handler->display->display_options['filters']['field_os2web_hearings_type_value']['expose']['label'] = 'Status';
+  $handler->display->display_options['filters']['field_os2web_hearings_type_value']['expose']['operator'] = 'field_os2web_hearings_type_value_op';
+  $handler->display->display_options['filters']['field_os2web_hearings_type_value']['expose']['identifier'] = 'field_os2web_hearings_type_value';
+  $handler->display->display_options['filters']['field_os2web_hearings_type_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    4 => 0,
+    7 => 0,
+    3 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['path'] = 'hoeringer';
+
+  /* Display: Høringer resume */
+  $handler = $view->new_display('block', 'Høringer resume', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Høringer og afgørelser';
+  $handler->display->display_options['display_description'] = 'Resume, showing 3 latest hearings';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Sidefod: Global: Tekstområde */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="/hoeringer">Se alle i høring</a>';
+  $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Indhold: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sorteringskriterie: Indhold: Startdato (field_os2web_hearings_startdate) */
+  $handler->display->display_options['sorts']['field_os2web_hearings_startdate_value']['id'] = 'field_os2web_hearings_startdate_value';
+  $handler->display->display_options['sorts']['field_os2web_hearings_startdate_value']['table'] = 'field_data_field_os2web_hearings_startdate';
+  $handler->display->display_options['sorts']['field_os2web_hearings_startdate_value']['field'] = 'field_os2web_hearings_startdate_value';
+  $handler->display->display_options['sorts']['field_os2web_hearings_startdate_value']['order'] = 'DESC';
+  $translatables['os2web_hearings'] = array(
+    t('Master'),
+    t('Høringer og afgørelser'),
+    t('Se alle'),
+    t('Søg'),
+    t('Gendan'),
+    t('Sortér efter'),
+    t('Stigende'),
+    t('Faldende'),
+    t('Fase'),
+    t('Beskrivelse'),
+    t('Frist'),
+    t('Høringer'),
+    t('Search/overview page for hearings'),
+    t('mere'),
+    t('Fra'),
+    t('Til'),
+    t('Status'),
+    t('Høringer resume'),
+    t('Resume, showing 3 latest hearings'),
+    t('<a href="/hoeringer">Se alle i høring</a>'),
+  );
+  $export['os2web_hearings'] = $view;
+
+  $view = new view();
   $view->name = 'os2web_hearings_view_hearing';
   $view->description = '';
   $view->tag = 'default';
