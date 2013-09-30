@@ -691,7 +691,7 @@ function os2web_hearings_field_default_field_instances() {
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'hearings_end_date',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',

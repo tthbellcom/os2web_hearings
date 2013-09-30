@@ -66,6 +66,7 @@ features[variable][] = comment_form_location_os2web_hearings_hearing_case
 features[variable][] = comment_os2web_hearings_hearing_case
 features[variable][] = comment_preview_os2web_hearings_hearing_case
 features[variable][] = comment_subject_field_os2web_hearings_hearing_case
+features[variable][] = date_format_hearings_end_date
 features[variable][] = date_format_kun_dato
 features[variable][] = field_bundle_settings_node__os2web_hearings_hearing_case
 features[variable][] = language_content_type_os2web_hearings_hearing
